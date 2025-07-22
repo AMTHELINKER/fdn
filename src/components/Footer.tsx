@@ -3,21 +3,33 @@ import { Heart, Star, Gift, Sparkles } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-festive text-white py-16 overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
-        
-        {/* Floating Decorative Elements */}
-        <Heart className="absolute top-10 left-10 h-8 w-8 text-white/20 animate-float" />
-        <Star className="absolute top-20 right-20 h-6 w-6 text-white/30 animate-sparkle" />
-        <Gift className="absolute bottom-20 left-1/4 h-10 w-10 text-white/25 animate-bounce-gentle" />
-        <Sparkles className="absolute bottom-10 right-10 h-7 w-7 text-white/20 animate-float" style={{ animationDelay: '1s' }} />
-        <Heart className="absolute top-1/2 left-1/2 h-12 w-12 text-white/15 animate-sparkle" style={{ animationDelay: '2s' }} />
-        
-        {/* Large Decorative Circles */}
-        <div className="absolute -top-20 -left-20 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white/8 rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }}></div>
+      {/* Animated Birthday Cake */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="animate-bounce-gentle">
+          {/* Cake Base */}
+          <div className="relative">
+            {/* Cake Layers */}
+            <div className="w-32 h-16 bg-secondary rounded-lg mb-2 relative">
+              <div className="w-28 h-12 bg-accent rounded-lg absolute top-1 left-2"></div>
+            </div>
+            <div className="w-36 h-20 bg-primary rounded-lg relative">
+              <div className="w-32 h-16 bg-primary-glow rounded-lg absolute top-1 left-2"></div>
+            </div>
+            
+            {/* Candles */}
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <div className="w-1 h-6 bg-yellow-200"></div>
+                  <div 
+                    className="w-2 h-3 bg-orange-400 rounded-full animate-sparkle" 
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  ></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

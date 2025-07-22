@@ -29,13 +29,24 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden animate-fadeInUp">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-hero">
+        {/* Animated particles effect */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-primary/20 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Floating Elements */}
@@ -49,10 +60,10 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="animate-fadeInUp">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-festive bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-festive bg-clip-text text-transparent animate-surprise">
             JOYEUX
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-foreground">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-foreground animate-surprise" style={{ animationDelay: '0.3s' }}>
             ANNIVERSAIRE
           </h2>
           

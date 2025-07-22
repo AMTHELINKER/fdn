@@ -26,8 +26,6 @@ const Index = () => {
         return <AboutSection />;
       case 'gallery':
         return <GallerySection />;
-      case 'timeline':
-        return <TimelineSection />;
       case 'contact':
         return <ContactSection />;
       default:
