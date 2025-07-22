@@ -1,12 +1,53 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/sections/HeroSection';
+import WordCloudSection from '@/components/sections/WordCloudSection';
+import AboutSection from '@/components/sections/AboutSection';
+import GallerySection from '@/components/sections/GallerySection';
+import TimelineSection from '@/components/sections/TimelineSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import ContactSection from '@/components/sections/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return (
+          <>
+            <HeroSection />
+            <WordCloudSection />
+            <TestimonialsSection />
+          </>
+        );
+      case 'about':
+        return <AboutSection />;
+      case 'gallery':
+        return <GallerySection />;
+      case 'timeline':
+        return <TimelineSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return (
+          <>
+            <HeroSection />
+            <WordCloudSection />
+            <TestimonialsSection />
+          </>
+        );
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
+      <main className="pt-16">
+        {renderSection()}
+      </main>
+      <Footer />
     </div>
   );
 };
