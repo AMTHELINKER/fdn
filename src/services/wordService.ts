@@ -1,6 +1,6 @@
 import { WordData } from '@/types/word';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://fdn-o1x5.onrender.com/api';
 
 export const saveWords = async (words: WordData[]) => {
   try {
