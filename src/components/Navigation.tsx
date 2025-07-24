@@ -21,6 +21,15 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
   const handleNavClick = (section: string) => {
     onSectionChange(section);
     setIsMenuOpen(false);
+
+    // Scroll vers la section
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -31,7 +40,7 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-primary animate-sparkle" />
             <span className="text-xl font-bold bg-gradient-festive bg-clip-text text-transparent">
-              Joyeux Anniversaire
+              DIEGS LIFE
             </span>
           </div>
 

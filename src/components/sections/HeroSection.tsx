@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     // Date de naissance (à ajuster selon la personne)
-    const birthDate = new Date('1990-03-15'); // Exemple
+    const birthDate = new Date('2003-07-23'); // Exemple
     
     const updateAge = () => {
       const now = new Date();
@@ -58,17 +58,23 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto h-full">
         <div className="animate-fadeInUp">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-festive bg-clip-text text-transparent animate-surprise">
-            JOYEUX
+          <h1 className="text-4xl md:text-6xl font-bold mb-2 mt-4 bg-gradient-festive bg-clip-text text-transparent animate-surprise">
+            WELCOME
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-foreground animate-surprise" style={{ animationDelay: '0.3s' }}>
-            ANNIVERSAIRE
+          <h2 className="text-xl md:text-4xl font-bold mb-2 text-foreground animate-surprise" style={{ animationDelay: '0.3s' }}>
+            To
+          </h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 text-foreground animate-surprise" style={{ animationDelay: '0.3s' }}>
+            DIEGANE'S HUB
           </h2>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Célébrons ensemble cette journée spéciale dédiée à une personne extraordinaire
+          <p className="text-xl sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          This website was created by les supernovas  with a little magic touch from Assane and your loved ones.
+It’s not just a gift. It’s a memory box, a little corner of the internet just for Diegane.
+We made it for her birthday, with care, laughter, and a whole lot of heart.
+We hope she’ll keep it close, not just today, but for a lifetime because she means that much to us.
           </p>
 
           {/* Age Counter */}
@@ -100,7 +106,7 @@ const HeroSection = () => {
 
           <Button size="lg" className="shadow-glow transition-bounce hover:scale-105">
             <Heart className="mr-2 h-5 w-5" />
-            Découvrir son univers
+            Découvrez son univers
           </Button>
         </div>
       </div>
